@@ -5,4 +5,5 @@ declare namespace NodeJS {
     NODE_ENV: string
     REACT_APP_BFF_URL: string
   }
+  
 }
