@@ -8,4 +8,5 @@ describe('App component', () => {
     const title = screen.getByText('MI EQUIPO')
     expect(title).toBeInTheDocument()
   })
+  
 })
