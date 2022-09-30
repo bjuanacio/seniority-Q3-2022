@@ -1,0 +1,61 @@
+.home{
+    &__board{
+        display:flex;
+        width:90%;
+        flex-direction:column;
+        margin: auto;
+    }
+    &__card{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    &__player{
+        display: flex;
+        width: 250px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 8px;
+        box-shadow: 2px 2px 2px 2px #80808030;
+        border-radius: 8px;
+    }
+    &__image{
+        display: flex;
+        height:100%;
+        width: 100%;
+        font-weight: bold;
+        border-radius: 8px;
+    }
+    &__name-player{
+        font-size:15px;
+        font-weight:bold;
+    }
+    &__items-player{
+        background-color: dimgrey;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        font-weight: bold;
+    }
+    &__numbers-player{
+        margin-top: 0px;
+        font-size:25px;
+        font-weight:bolder;
+        margin-bottom: 0px;
+    }
+    &__options-player{
+        margin-top: 0px;
+        background-color: dimgrey;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+        padding-bottom: 15px;
+
+    }
+
+
+}
