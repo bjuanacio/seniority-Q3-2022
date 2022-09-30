@@ -1,0 +1,6 @@
+.player-info-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
