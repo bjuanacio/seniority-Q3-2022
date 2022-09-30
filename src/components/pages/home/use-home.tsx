@@ -6,6 +6,7 @@ const useHome = () => {
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [title, setTitle] = useState('Agregar jugador')
   const [players, setPlayers] = useState<Player[]>([])
+  const [filteredPlayers, setFilteredPlayers] = useState<Player[]>([])
 
   const addPlayer = () => {
     setIsModalVisible(true)
@@ -18,12 +19,22 @@ const useHome = () => {
   const getPlayers = async () => {
     const response = await PlayerService.getPlayers()
     setPlayers(response)
+    setFilteredPlayers(response)
   }
 
   const postPlayer = async (player: Player) => {
     const response = await PlayerService.savePlayer(player)
     console.log(response)
     getPlayers()
+  }
+
+  const searchByName = (searchText: string) => {
+    setFilteredPlayers(
+      players.filter((player) => {
+        const fullName = `${player.firstName} ${player.lastName}`
+        return fullName.includes(searchText)
+      })
+    )
   }
 
   useEffect(() => {
@@ -44,7 +55,9 @@ const useHome = () => {
     addPlayer,
     savePlayer,
     closeModal,
-    players
+    players,
+    searchByName,
+    filteredPlayers
   }
 }
 
