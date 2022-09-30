@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { UseStoreJSI } from '../../store/use-store/use-store'
 
 export interface UseSliderArgs {
   value?: number
@@ -6,25 +6,18 @@ export interface UseSliderArgs {
   onChange?: (value: number) => void
 }
 
-const DEFAULT_VALUE = 55
-
 function useSlider(args?: UseSliderArgs) {
-  const [currentValue, setCurrentValue] = useState(args?.defaultValue ?? DEFAULT_VALUE)
-
-  useEffect(() => {
-    setCurrentValue(args?.value || args?.defaultValue || DEFAULT_VALUE)
-  }, [args?.value])
+  const { count, increment } = UseStoreJSI()
 
   const handleCurrentValue = (valueTarget: string) => {
     const valueSlider = Number(valueTarget)
 
     if (args?.onChange) args?.onChange(valueSlider)
-
-    setCurrentValue(valueSlider)
+    increment(valueSlider)
   }
 
   return {
-    currentValue,
+    count,
     handleCurrentValue
   }
 }

@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { UseStoreJSI } from '../store/use-store/use-store'
 import './slider.scss'
 import useSlider from './use-slider/use-slider'
 
@@ -13,11 +14,13 @@ const MAX_RANGE = 100
 const MIN_RANGE = 0
 
 const Slider: FC<SliderProps> = ({ label, value, defaultValue, onChange }) => {
-  const { currentValue, handleCurrentValue } = useSlider({
+  const { handleCurrentValue } = useSlider({
     defaultValue,
     onChange,
     value
   })
+
+  const { count } = UseStoreJSI()
 
   return (
     <div className="slider">
@@ -33,12 +36,12 @@ const Slider: FC<SliderProps> = ({ label, value, defaultValue, onChange }) => {
             type="range"
             id={label}
             name={label}
-            value={currentValue}
+            value={count}
             min={MIN_RANGE}
             max={MAX_RANGE}
             onChange={(e) => handleCurrentValue(e.target.value)}
           />
-          <span className="slider__value">{currentValue}</span>
+          <span className="slider__value">{count}</span>
         </div>
       </div>
     </div>

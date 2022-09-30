@@ -5,7 +5,7 @@ describe('useSlider tests', () => {
   it('should return default value', () => {
     const { result } = renderHook(() => useSlider())
 
-    expect(result.current.currentValue).toBe(55)
+    expect(result.current.count).toBe(55)
   })
 
   it('should return custom default value', () => {
@@ -15,7 +15,7 @@ describe('useSlider tests', () => {
       })
     )
 
-    expect(result.current.currentValue).toBe(11)
+    expect(result.current.count).toBe(11)
   })
 
   it('should execute change the value', () => {
@@ -25,7 +25,7 @@ describe('useSlider tests', () => {
       result.current.handleCurrentValue('11')
     })
 
-    expect(result.current.currentValue).toBe(11)
+    expect(result.current.count).toBe(11)
   })
 
   it('should execute onChange function', () => {

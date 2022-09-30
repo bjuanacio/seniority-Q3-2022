@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import Slider from './slider'
 
 describe('Slider test', () => {
-  it('should render a slider with a dafultValue', async () => {
+  it('should render a slider with a default Value', async () => {
     render(<Slider />)
 
     const element = screen.getByRole('slider')
@@ -12,7 +12,7 @@ describe('Slider test', () => {
     expect(value).toBeInTheDocument()
   })
 
-  it('should render custom dafultValue', async () => {
+  it('should render custom default Value', async () => {
     render(<Slider defaultValue={22} />)
 
     const value = screen.getByText('22')
