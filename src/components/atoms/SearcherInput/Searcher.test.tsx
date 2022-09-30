@@ -7,4 +7,8 @@ describe('Searcher input', () => {
 
     expect(input).toMatchSnapshot()
   })
+  test('Should render with name', () => {
+    const input = render(<SearcherInput onChange={() => {}} name="name" />)
+    expect(input).toMatchSnapshot()
+  })
 })

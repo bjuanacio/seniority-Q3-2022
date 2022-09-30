@@ -34,7 +34,12 @@ export const PlayerCard: FC<PlayerCardProps> = ({ player, deletePlayer, modifyPl
         </div>
       </div>
       <div>
-        <img src={DeleteIcon} alt="delete-icon" onClick={() => deletePlayer(player)} />
+        <img
+          src={DeleteIcon}
+          alt="delete-icon"
+          data-testid="delete-icon"
+          onClick={() => deletePlayer(player)}
+        />
         <img
           src={EditIcon}
           alt="edit-icon"

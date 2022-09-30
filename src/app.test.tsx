@@ -85,4 +85,19 @@ describe('App component', () => {
     fireEvent.click(screen.getByTestId('close-icon'))
     expect(screen.queryByText(/Agregar jugador/i)).toBeNull()
   })
+  test('Should delete a player', async () => {
+    render(<App />)
+    axiosMock.delete.mockResolvedValue({ data: {} })
+    fireEvent.click(screen.getByText(/Agregar/i))
+    axiosMock.get.mockResolvedValueOnce({
+      data: [playerExample]
+    })
+    await waitFor(() => {
+      fireEvent.click(screen.getAllByTestId('delete-icon')[0])
+    })
+
+    await waitFor(() => {
+      expect(screen.queryByText(/toSearch/i)).toBeNull()
+    })
+  })
 })
