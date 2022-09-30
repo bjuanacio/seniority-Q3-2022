@@ -4,5 +4,46 @@
 
   &__title {
     color: var(--black-color);
+    
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    height: 15rem;
+    justify-content: space-between;
+
+  }
+  &__header-input {
+    input{
+     width: 11rem;
+     height: 3rem;
+     border-radius: 1rem;
+     
+    }
+  }
+  &__header-actions {
+    display: flex;
+    flex-direction: column;
+  }
+  &__header__agregar {
+
+    display: flex;
+    justify-content: end;
+    &__button {
+      background-color: rgb(53, 52, 51);
+      color: white;
+      width: 9rem;
+      height: 3rem;
+      border-radius: 1rem;
+      font-size: large;
+      margin-top: 5rem;
+      margin-right: 3rem;
+    }
+  }
+
+  &__main {
+    display: flex;
+    gap: 1rem;
   }
 }
