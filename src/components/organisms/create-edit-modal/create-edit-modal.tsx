@@ -5,7 +5,12 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../../store/store'
 import { editPlayer, fetchPlayerPositions, createPlayer } from '../../../services/user.service'
-import { setPositions, toggleShowModal } from '../../../store/slices/app-slice'
+import {
+  setPositions,
+  toggleShowModal,
+  editPlayerStore,
+  addPlayer
+} from '../../../store/slices/app-slice'
 import { useForm } from '../../../hooks/use-form'
 import CloseIcon from '../../../assets/close-icon.svg'
 
@@ -76,9 +81,9 @@ export const CreateEditModal = () => {
     firstName: '',
     lastName: '',
     image: '',
-    attack: 55,
-    defense: 55,
-    skills: 55,
+    attack: 80,
+    defense: 65,
+    skills: 35,
     idAuthor: 50,
     idPosition: 0
   })
@@ -90,7 +95,6 @@ export const CreateEditModal = () => {
   }, [currentPlayer])
 
   useEffect(() => {
-    console.log(validation)
     setInvalidForm(
       Object.keys(validation)
         .filter((key) => requiredFields.includes(key))
@@ -110,9 +114,15 @@ export const CreateEditModal = () => {
     if (invalidForm) {
       return
     } else if (currentPlayer) {
-      editPlayer({ ...currentPlayer, ...values })
+      editPlayer({ ...currentPlayer, ...values }).then(() => {
+        dispatch(editPlayerStore({ ...currentPlayer, ...values }))
+        dispatch(toggleShowModal())
+      })
     } else {
-      createPlayer({ ...values })
+      createPlayer({ ...values }).then(({ data }) => {
+        dispatch(addPlayer({ ...(data as any) }))
+        dispatch(toggleShowModal())
+      })
     }
   }
 
@@ -171,6 +181,7 @@ export const CreateEditModal = () => {
                       )}
                       {group[fieldKey].type == 'slider' && (
                         <Slider
+                          defaultValue={values[group[fieldKey].name]}
                           label={fieldKey}
                           value={values[group[fieldKey].name]}
                           onChange={(value) =>

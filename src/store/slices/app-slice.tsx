@@ -47,7 +47,7 @@ export const appSlice = createSlice({
       state.players = [...state.players, payload]
       state.filteredPlayers = [...state.players, payload]
     },
-    editPlayer: (state, { payload }: PayloadAction<Player>) => {
+    editPlayerStore: (state, { payload }: PayloadAction<Player>) => {
       state.players = state.players.map((player) => {
         if (player.id === payload.id) return payload
         return player
@@ -66,7 +66,7 @@ export const {
   toggleShowModal,
   setPositions,
   addPlayer,
-  editPlayer,
+  editPlayerStore,
   setCurrentPlayer
 } = appSlice.actions
 
