@@ -1,0 +1,7 @@
+.form-input {
+  display: flex;
+  flex-direction: column;
+  &__helper {
+    color: red;
+  }
+}
