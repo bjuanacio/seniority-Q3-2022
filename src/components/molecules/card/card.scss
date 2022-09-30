@@ -1,0 +1,76 @@
+.card {
+    border-radius: 16px;
+    background-color: #333;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+    &__image {
+        flex: 1;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        position: relative;
+
+        img {
+            flex: 1;
+            height: 100%; 
+        }
+    }
+
+    &__player {
+        position: absolute;
+        background-color: rgba(255,255,255,0.4); 
+        bottom: 16px;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        font-size: 16px;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    &__bottom {
+        height: 120px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: row;
+        margin-top: 12px;
+
+        &-column {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        &-title {
+            color: white;
+            font-size: 12px;
+        }
+
+        &-value {
+            color: white;
+            font-size: 24px;
+        }
+    }
+
+
+    &__buttons {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+    &__button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        height: 32px;
+        width: 32px;
+    }
+}

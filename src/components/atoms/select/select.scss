@@ -1,0 +1,17 @@
+.select {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    flex: 1;
+    
+    &__label{
+        display: block;
+        margin-bottom: 4px;
+    }
+    &__text{ 
+        border-radius: 8px;
+        border: 1px solid lightgray;
+        padding: 16px;
+        width: 100%;
+    }
+}
