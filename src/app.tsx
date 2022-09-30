@@ -3,11 +3,12 @@ import DeleteIcon from './assets/delete-icon.svg'
 import EditIcon from './assets/edit-icon.svg'
 import CloseIcon from './assets/close-icon.svg'
 import { APP_CONSTANTS } from './constants/app-constants'
+import { Header } from './components/organisms/header/header'
 
 function App() {
   return (
     <div className="app">
-      <h1 className="app__title">{APP_CONSTANTS.APP_TITLE}</h1>
+      <Header title={APP_CONSTANTS.APP_TITLE} />
       <div></div>
       <div>
         <img src={DeleteIcon} alt="delete-icon" />
