@@ -1,0 +1,15 @@
+.image-not-found{
+    align-items: center;
+    background-color: lightgray;
+    border: 1px solid darkgray;
+    border-radius: 16px;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+
+}
+img{
+    max-width: 100%; height: auto
+}
