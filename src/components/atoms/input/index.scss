@@ -1,0 +1,15 @@
+.input {
+  width: 200px;
+  height: 30px;
+  padding-top: 2px;
+  padding-left: 10px;
+  border-radius: 10px;
+  border: 2px solid lightgrey;
+  color: lightgrey;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.input:focus {
+  color: black;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

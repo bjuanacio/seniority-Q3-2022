@@ -3,11 +3,13 @@ import Slider from './components/atoms/slider/slider'
 import DeleteIcon from './assets/delete-icon.svg'
 import EditIcon from './assets/edit-icon.svg'
 import CloseIcon from './assets/close-icon.svg'
+import { SearchBar } from './components/organisms/searchBar'
 
 function App() {
   return (
     <div className="app">
       <h1 className="app__title">MI EQUIPO</h1>
+      <SearchBar />
       <div>
         <Slider label="Puntaje" value={55} />
       </div>
