@@ -30,7 +30,6 @@ export const FormPlayer: React.FC<ModalProps> = ({ handleCloseModal, handleAddNe
         ...current,
         [property]: value
       }))
-      console.log(playerInfo)
     }
   return (
     <div className="modal">

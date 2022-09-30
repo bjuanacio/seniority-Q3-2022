@@ -71,7 +71,7 @@ export const updatePlayer = async (playerInfo: IPlayer) => {
   }
 }
 
-export const deletePlayer = async (id: number) => {
+export const deletePlayer = async (id: number | undefined) => {
   try {
     const { data } = await axiosInstance.delete(`/player/${id}`)
     return data

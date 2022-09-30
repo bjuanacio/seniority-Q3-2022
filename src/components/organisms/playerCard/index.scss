@@ -6,6 +6,10 @@
   padding-top: 10px;
   padding-bottom: 10px;
 
+  &__icon {
+    cursor: pointer;
+  }
+
   &__text {
     background-color: gray;
     color: white;

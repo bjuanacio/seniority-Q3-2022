@@ -63,7 +63,7 @@ class Store {
     })
   }
 
-  async deletePlayer(id: number) {
+  async deletePlayer(id: number | undefined) {
     const deletedPlayer = await deletePlayer(id)
     if (deletedPlayer.affected) {
       console.log({ deleted: true })

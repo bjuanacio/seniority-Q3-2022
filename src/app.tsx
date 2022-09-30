@@ -17,7 +17,9 @@ const App = observer(() => {
   }, [])
 
   const handleEdit = (player: IPlayer) => {}
-  const handleDelete = (id: number | undefined) => {}
+  const handleDelete = (id: number | undefined) => {
+    store.deletePlayer(id)
+  }
 
   const handleFilter = (filter: string) => {
     store.filterPlayers(filter)
@@ -53,15 +55,6 @@ const App = observer(() => {
           />
         ))}
       </section>
-
-      <div>
-        <Slider label="Puntaje" value={55} />
-      </div>
-      <div>
-        <img src={DeleteIcon} alt="delete-icon" />
-        <img src={EditIcon} alt="edit-icon" />
-        <img src={CloseIcon} alt="close-icon" />
-      </div>
     </div>
   )
 })
