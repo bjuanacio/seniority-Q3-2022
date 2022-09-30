@@ -4,22 +4,28 @@ import DeleteIcon from './assets/delete-icon.svg'
 import EditIcon from './assets/edit-icon.svg'
 import CloseIcon from './assets/close-icon.svg'
 import { SearchBar } from './components/organisms/searchBar/searchBar'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { PlayerCard } from './components/organisms/playerCard/playerCard'
 import store, { IPlayer } from './store/store'
 import { observer } from 'mobx-react'
 
 const App = observer(() => {
+  const [openNew, setOpenNew] = useState(false)
   useEffect(() => {
     store.getAllPlayers()
   }, [])
 
   const handleEdit = (player: IPlayer) => {}
   const handleDelete = (id: number | undefined) => {}
+
+  const handleFilter = (e: string) => {
+    console.log(e)
+    store.filterPlayers(e)
+  }
   return (
     <div className="app">
       <h1 className="app__title">MI EQUIPO</h1>
-      <SearchBar />
+      <SearchBar handleFilter={handleFilter} />
 
       <section className="app__cards">
         {store.filteredPlayers.map((player) => (
