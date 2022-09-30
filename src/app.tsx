@@ -1,21 +1,30 @@
 import './app.scss'
 import Slider from './components/atoms/slider/slider'
-import DeleteIcon from './assets/delete-icon.svg'
 import EditIcon from './assets/edit-icon.svg'
-import CloseIcon from './assets/close-icon.svg'
+import Button from './components/atoms/button/button'
+import CloseIcon from './assets/close-icon'
+import DeleteIcon from './assets/delete-icon'
+import HeaderSection from './components/molecules/header-section/header-section'
+import useApp from './hooks/useApp/useApp'
+import CardSection from './components/molecules/cards-section/cards-section'
 
 function App() {
+  const { openPlayerForm } = useApp()
   return (
     <div className="app">
-      <h1 className="app__title">MI EQUIPO</h1>
-      <div>
+      <HeaderSection />
+      <CardSection />
+      {/* <Slider label="Puntaje" value={55} /> */}
+      {/* <div>
         <Slider label="Puntaje" value={55} />
       </div>
+      <Button icon={<DeleteIcon />}>Borrar</Button>
       <div>
-        <img src={DeleteIcon} alt="delete-icon" />
+        <DeleteIcon />
         <img src={EditIcon} alt="edit-icon" />
-        <img src={CloseIcon} alt="close-icon" />
-      </div>
+        <CloseIcon />
+        <CloseIcon />
+      </div> */}
     </div>
   )
 }
