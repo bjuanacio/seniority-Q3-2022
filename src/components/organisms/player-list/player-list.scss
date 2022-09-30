@@ -1,0 +1,53 @@
+.players {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    gap: 10px;
+    margin: 30px auto;
+
+    &__card {
+        border-radius: 20px;
+        background-color: rgb(58, 58, 58);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    &__img{
+        width: 250px;
+        border-radius: 20px;
+        img {
+            width: 250px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            filter: opacity(.75)
+        }
+    }
+    &__title {
+        font-size: 20px;
+        position: absolute;
+        top: 185px;
+    }
+    &__skills {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        p b {
+            font-size: 12px;
+        }
+        p{
+            font-size: 25px;
+            font-weight: 700;
+        }
+    }
+    &__action {
+        margin: 10px auto;
+        display: flex;
+        gap: 15px;
+        img {
+            width: 24px;
+        }
+    }
+} 

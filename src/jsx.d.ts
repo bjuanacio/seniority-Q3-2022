@@ -71,6 +71,7 @@ interface PichinchaButtonHTMLAttributes {
   onlyIcon?: boolean
   ref?: MutableRefObject
   onClick?(): void
+  children?: React.ReactNode
 }
 
 interface HTMLPichinchaButtonElement extends PichinchaButtonHTMLAttributes {
