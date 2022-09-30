@@ -4,10 +4,13 @@ import App from './app'
 import reportWebVitals from './reportWebVitals'
 
 import './index.scss'
+import { StoreProvider } from './components/atoms/store/store'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StoreProvider>
+      <App />
+    </StoreProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )
