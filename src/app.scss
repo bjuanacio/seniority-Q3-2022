@@ -1,8 +1,46 @@
 .app {
   max-width: 1024px;
   margin: auto;
-
-  &__title {
-    color: var(--black-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  .app__title {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 80vw;
+  }
+  .input[type='text'] {
+    background-color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+  }
+  button {
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    border: 0px solid transparent;
+    border-radius: 3px;
+    font-size: large;
+  }
+  .card {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  img {
+    max-width: 300px;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
   }
 }

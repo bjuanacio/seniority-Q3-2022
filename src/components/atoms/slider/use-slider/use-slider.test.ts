@@ -22,7 +22,7 @@ describe('useSlider tests', () => {
     const { result } = renderHook(() => useSlider())
 
     act(() => {
-      result.current.handleCurrentValue('11')
+      result.current.handleCurrentValue({ target: { value: '11' } } as any)
     })
 
     expect(result.current.currentValue).toBe(11)
@@ -38,9 +38,9 @@ describe('useSlider tests', () => {
     )
 
     act(() => {
-      result.current.handleCurrentValue('11')
+      result.current.handleCurrentValue({ target: { value: '11' } } as any)
     })
 
-    expect(mockOnChange).toBeCalledWith(11)
+    expect(mockOnChange).toBeCalledWith({ target: { value: '11' } })
   })
 })

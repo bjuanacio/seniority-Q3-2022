@@ -6,7 +6,7 @@ export interface SliderProps {
   label?: string
   value?: number
   defaultValue?: number
-  onChange?: (value: number) => void
+  onChange?: (value: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const MAX_RANGE = 100
@@ -36,7 +36,7 @@ const Slider: FC<SliderProps> = ({ label, value, defaultValue, onChange }) => {
             value={currentValue}
             min={MIN_RANGE}
             max={MAX_RANGE}
-            onChange={(e) => handleCurrentValue(e.target.value)}
+            onChange={(e) => handleCurrentValue(e)}
           />
           <span className="slider__value">{currentValue}</span>
         </div>
