@@ -29,13 +29,6 @@ export const Home: FC<HomeProps> = (props: HomeProps) => {
       <section className="home__board">
         <section className="home__card">
           {players.map((option: Player, item) => {
-            /* function showBook() {
-              getMyPlayers()
-                .then((response) => {
-                  console.log('YAAA')
-                })
-                .catch(() => {})
-            } */
             console.log(option.firstName)
             return (
               <section key={item} className="home__player">
