@@ -1,0 +1,18 @@
+.image-card {
+  position: relative;
+  text-align: center;
+  height: 60%;
+
+  &__image {
+    width: 100%;
+    border-radius: 30px;
+    height: 100%;
+  }
+
+  &__text-over {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

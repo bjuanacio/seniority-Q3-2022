@@ -1,0 +1,9 @@
+.stat-box {
+  text-align: center;
+  padding: 5px;
+
+  &__text {
+    color: var(--bg-color);
+    margin-bottom: 1px;
+  }
+}
