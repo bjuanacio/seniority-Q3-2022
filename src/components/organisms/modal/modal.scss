@@ -1,0 +1,21 @@
+.modal {
+  position: fixed;
+  background: rgba(74, 74, 80, 0.8);
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 1500;
+  display: inline-block;
+
+  &__outside {
+    height: 100%;
+  }
+
+  &__body {
+    position: fixed;
+    top: 20%;
+    left: 25%;
+    background-color: #fff;
+  }
+}

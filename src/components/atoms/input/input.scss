@@ -1,0 +1,18 @@
+.input {
+  display: block;
+  &__input {
+    padding: 0.7rem;
+    border-radius: 10px;
+    border: 1px solid var(--gray-color);
+
+    &__error {
+      border: 1px solid var(--red-color);
+    }
+  }
+
+  &__error {
+    color: var(--red-color);
+    font-size: 0.8rem;
+    margin-top: 0.1rem;
+  }
+}

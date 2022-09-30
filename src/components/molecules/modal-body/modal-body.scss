@@ -1,0 +1,39 @@
+.modal-body {
+  padding: 2rem;
+  display: flex;
+  gap: 3rem;
+
+  &__image-container {
+    &__text {
+      margin-bottom: 1.5rem;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    &__image {
+      border-radius: 20px;
+    }
+  }
+
+  &__content {
+    &__close {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &__inputs {
+      display: flex;
+      gap: 3rem;
+    }
+
+    &__sliders {
+      margin-top: 1rem;
+    }
+
+    &__actions {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
