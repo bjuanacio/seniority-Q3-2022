@@ -5,4 +5,15 @@
   &__title {
     color: var(--black-color);
   }
+
+  &__options {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__players {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
 }
