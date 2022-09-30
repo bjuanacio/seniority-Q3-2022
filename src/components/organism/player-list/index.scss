@@ -1,0 +1,58 @@
+.my-2 {
+  margin: 2rem 0px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.padding-button {
+  width: 240px;
+}
+.btn-dark {
+  background-color: #505050;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 20px;
+}
+
+.todo-actions {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+
+  @media (min-width: 400px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.todo-progress {
+  border: 1px solid grey;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+
+  @media (min-width: 400px) {
+    margin-top: 0;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.toggle-filter {
+  display: flex;
+  justify-content: center;
+  padding: 0.6rem;
+  margin-top: 1rem;
+
+  @media (min-width: 400px) {
+    margin-top: 0;
+  }
+}
