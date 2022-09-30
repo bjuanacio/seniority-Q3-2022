@@ -17,14 +17,22 @@ describe('useValidation hook', () => {
   })
 
   it('should return an invalid input on check', () => {
-
-
     const { result } = renderUseValidation((input) => input.length < 2)
 
     act(() => {
-        result.current.validate('over 2 chars')
+      result.current.validate('over 2 chars')
     })
 
     expect(result.current.isValid).toBe(false)
+  })
+
+  it('should return a valid input on check', () => {
+    const { result } = renderUseValidation((input) => input.length > 2)
+
+    act(() => {
+      result.current.validate('over 2 chars')
+    })
+
+    expect(result.current.isValid).toBe(true)
   })
 })

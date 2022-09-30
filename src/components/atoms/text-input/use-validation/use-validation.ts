@@ -6,7 +6,7 @@ export const useValidation = (validationFunction: UseValidationFunction) => {
   const [isValid, setIsValid] = useState(true)
 
   const validate = (input: string) => {
-    if(!validationFunction(input)) setIsValid(false) 
+    if (!validationFunction(input)) setIsValid(false)
   }
 
   return {
