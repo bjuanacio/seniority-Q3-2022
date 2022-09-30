@@ -2,12 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './app'
 import reportWebVitals from './reportWebVitals'
+import { PlayerContextProvider } from './context/player-context'
 
 import './index.scss'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PlayerContextProvider>
+      <App />
+    </PlayerContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )
