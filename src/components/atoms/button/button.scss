@@ -1,0 +1,17 @@
+.button {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  color:white;
+  padding: 14px;
+  border-radius: 4px;
+  font-size: large;
+  font-weight: bold;
+
+  &:hover {
+    filter: opacity(0.8);
+  }
+}

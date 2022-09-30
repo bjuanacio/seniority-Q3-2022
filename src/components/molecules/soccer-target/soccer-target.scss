@@ -1,0 +1,46 @@
+.soccer-target {
+  max-width: 280px;
+  flex-grow: 4;
+
+  &__image {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 280px;
+      border-start-start-radius: 16px;
+      border-start-end-radius: 16px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.5));
+    }
+
+    h3 {
+      z-index: 10;
+      position: fixed;
+      margin: 100px;
+    }
+  }
+
+  &__panel {
+    background-color: black;
+    border-end-end-radius: 16px;
+    border-end-start-radius: 16px;
+  }
+
+  &__stadistics {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    img{
+      width: 20px;
+    }
+  }
+}
