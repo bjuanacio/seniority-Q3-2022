@@ -1,0 +1,78 @@
+.modal {
+  position: absolute;
+  left: 0;
+  top: -500px;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+
+  &-button {
+    z-index: 20;
+    cursor: pointer;
+    background-color: gray;
+    width: 200px;
+    height: 60px;
+    font-size: 22px;
+    color: white;
+    border-radius: 10px;
+  }
+
+  &-title {
+    margin: 1rem 1rem;
+    font-size: 22px;
+  }
+
+  &-body {
+    padding: 1rem;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+
+  &-content {
+    border-radius: 3px;
+    background-color: white;
+    width: 80%;
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-left: 220px;
+  }
+  &-header {
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  &-section1 {
+    display: flex;
+    flex-direction: row;
+    padding: 0.25rem 0.25rem;
+    gap: 15px;
+  }
+  &-section2 {
+    flex-direction: column;
+    padding: 0 0.05rem;
+  }
+
+  &-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+}
