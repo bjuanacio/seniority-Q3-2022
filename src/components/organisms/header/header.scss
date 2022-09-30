@@ -3,4 +3,9 @@
     &__title {
         color: var(--black-color);
     }
+
+    &__controls {
+        display: flex;
+        justify-content: space-between;
+    }
 }

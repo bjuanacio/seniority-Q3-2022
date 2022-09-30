@@ -12,8 +12,10 @@ export const Header: FC<HeaderProps> = ({ title }) => {
   return (
     <header>
       <h1 className="header__title">{title}</h1>
-      <TextInput value="" />
-      <Button text={APP_CONSTANTS.BUTTONS.ADD} />
+      <section className="header__controls">
+        <TextInput value="" />
+        <Button text={APP_CONSTANTS.BUTTONS.ADD} />
+      </section>
     </header>
   )
 }
