@@ -31,4 +31,29 @@ export class UserService {
     console.log(response.data)
     return response.data
   }
+
+  static async createPlayer(
+    firstName: string,
+    lastName: string,
+    image: string,
+    attack: number,
+    defense: number,
+    skills: number,
+    idAuthor: number,
+    idPosition: number
+  ) {
+    const response = await axios.post('https://api-exercise-q3.herokuapp.com/player', {
+      headers: {
+        firstName: firstName,
+        lastName: lastName,
+        image: image,
+        attack: attack,
+        defense: defense,
+        skills: skills,
+        idAuthor: idAuthor,
+        idPosition: idPosition
+      }
+    })
+    return response.data
+  }
 }

@@ -6,8 +6,12 @@ import './SearchBar.scss'
 
 export interface SearchBarProps {
   setSearchValue?: (value: string) => void
+  setStateModal: (value: boolean) => void
 }
 export const SearchBar: FC<SearchBarProps> = (props: SearchBarProps) => {
+  function newPlayer() {
+    props.setStateModal(true)
+  }
   return (
     <section className="search">
       <div className="search__input">
@@ -20,7 +24,9 @@ export const SearchBar: FC<SearchBarProps> = (props: SearchBarProps) => {
         ></Input>
       </div>
       <div className="search__button-container">
-        <button className="search__button">Agregar</button>
+        <button className="search__button" onClick={newPlayer}>
+          Agregar
+        </button>
       </div>
     </section>
   )
