@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button } from '../atoms/button'
-import { Input } from '../atoms/input'
+import { Button } from '../../atoms/button'
+import { Input } from '../../atoms/input'
 import './searchBar.scss'
 
 export const SearchBar = () => {

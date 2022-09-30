@@ -25,7 +25,7 @@ export class UserService {
 export const getPlayers = async () => {
   try {
     const { data } = await axiosInstance.get('/player', {
-      headers: { auhtor: `${AUTHOR_ID}` }
+      headers: { author: `${AUTHOR_ID}` }
     })
     return data
   } catch (err) {
