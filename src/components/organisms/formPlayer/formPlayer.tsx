@@ -48,40 +48,59 @@ export const FormPlayer: React.FC<ModalProps> = ({ handleCloseModal, handleAddNe
                 <div className="form-container-section1">
                   <div>
                     <p>Nombre</p>
-                    <Input onChange={handleInfo('firstName')} />
+                    <Input onChange={handleInfo('firstName')} placeholder="name" />
                   </div>
                   <div>
                     <p>Apellido</p>
-                    <Input onChange={handleInfo('firstName')} />
+                    <Input onChange={handleInfo('firstName')} placeholder="apellido" />
                   </div>
                 </div>
                 <div className="form-container-section1">
                   <div>
                     <p>Imagen</p>
-                    <Input onChange={handleInfo('firstName')} />
+                    <Input onChange={handleInfo('firstName')} placeholder="imagen" />
                   </div>
                   <div>
                     <p>Posición</p>
-                    <Input onChange={handleInfo('position')} />
+                    <Input onChange={handleInfo('position')} placeholder="posición" />
                   </div>
                 </div>
               </section>
               <section className="form-container-section2">
                 <div>
-                  <Slider label="Ataque" value={55} onChange={handleInfo('attack')} />
+                  <Slider
+                    label="Ataque"
+                    value={55}
+                    onChange={handleInfo('attack')}
+                    placeholder="ataque"
+                  />
                 </div>
                 <div>
-                  <Slider label="Defensa" value={55} onChange={handleInfo('defense')} />
+                  <Slider
+                    label="Defensa"
+                    value={55}
+                    onChange={handleInfo('defense')}
+                    placeholder="defensa"
+                  />
                 </div>
                 <div>
-                  <Slider label="Skills" value={55} onChange={handleInfo('skills')} />
+                  <Slider
+                    label="Skills"
+                    value={55}
+                    onChange={handleInfo('skills')}
+                    placeholder="skills"
+                  />
                 </div>
               </section>
             </section>
           </section>
           <div className="modal-footer">
             {nuevo && (
-              <button className="modal-button" onClick={() => handleAddNew(playerInfo)}>
+              <button
+                className="modal-button"
+                data-testId="agregarNuevo"
+                onClick={() => handleAddNew(playerInfo)}
+              >
                 Agregar
               </button>
             )}

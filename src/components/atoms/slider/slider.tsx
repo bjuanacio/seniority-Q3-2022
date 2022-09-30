@@ -7,12 +7,13 @@ export interface SliderProps {
   value?: number
   defaultValue?: number
   onChange?: (value: number) => void
+  placeholder?: string
 }
 
 const MAX_RANGE = 100
 const MIN_RANGE = 0
 
-const Slider: FC<SliderProps> = ({ label, value, defaultValue, onChange }) => {
+const Slider: FC<SliderProps> = ({ label, value, defaultValue, placeholder, onChange }) => {
   const { currentValue, handleCurrentValue } = useSlider({
     defaultValue,
     onChange,
@@ -37,6 +38,7 @@ const Slider: FC<SliderProps> = ({ label, value, defaultValue, onChange }) => {
             min={MIN_RANGE}
             max={MAX_RANGE}
             onChange={(e) => handleCurrentValue(e.target.value)}
+            placeholder={placeholder}
           />
           <span className="slider__value">{currentValue}</span>
         </div>

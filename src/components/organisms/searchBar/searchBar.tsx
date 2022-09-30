@@ -17,7 +17,7 @@ export const SearchBar: React.FC<SearchProps> = ({ handleFilter, handleAdd }) =>
         inputId="buscar"
         onChange={handleFilter}
       />
-      <Button variant="primary" testId="agregar" onClick={handleAdd}>
+      <Button variant="primary" testId="nuevo" onClick={handleAdd}>
         Agregar
       </Button>
     </div>

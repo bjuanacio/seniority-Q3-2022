@@ -46,7 +46,7 @@ const App = observer(() => {
       <SearchBar handleFilter={handleFilter} handleAdd={handleAddPlayer} />
 
       <section className="app__cards">
-        {store.filteredPlayers.map((player) => (
+        {store.filteredPlayers?.map((player) => (
           <PlayerCard
             key={player.id}
             player={player}
