@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  &__close-modal {
+    width: 24px;
+    cursor: pointer;
+  }
+}

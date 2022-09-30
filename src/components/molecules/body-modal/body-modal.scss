@@ -1,0 +1,20 @@
+.content {
+    display: flex;
+    justify-content: space-around;
+}
+.image {
+  width: 400px;
+  height: auto;
+  margin-right: 16px;
+  &__not-found {
+    background-color: var(--main-color);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
