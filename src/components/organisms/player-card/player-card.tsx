@@ -5,7 +5,11 @@ import DeleteIcon from '../../../assets/delete-icon.svg'
 import EditIcon from '../../../assets/edit-icon.svg'
 import { removePlayer } from '../../../services/user.service'
 import { useDispatch } from 'react-redux'
-import { setCurrentPlayer, toggleShowModal } from '../../../store/slices/app-slice'
+import {
+  setCurrentPlayer,
+  toggleShowModal,
+  removePlayerStore
+} from '../../../store/slices/app-slice'
 
 interface Props {
   player: Player
@@ -20,7 +24,10 @@ export const PlayerCard = ({ player }: Props) => {
 
   const dispatch = useDispatch()
 
-  const handleDelete = () => removePlayer(player)
+  const handleDelete = () =>
+    removePlayer(player).then(() => {
+      dispatch(removePlayerStore(player))
+    })
   const handleEdit = () => {
     dispatch(setCurrentPlayer(player))
     dispatch(toggleShowModal())

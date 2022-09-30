@@ -56,6 +56,10 @@ export const appSlice = createSlice({
         if (player.id === payload.id) return payload
         return player
       })
+    },
+    removePlayerStore: (state, { payload }: PayloadAction<Player>) => {
+      state.players = state.players.filter((player) => player.id !== payload.id)
+      state.filteredPlayers = state.players.filter((player) => player.id !== payload.id)
     }
   }
 })
@@ -67,7 +71,8 @@ export const {
   setPositions,
   addPlayer,
   editPlayerStore,
-  setCurrentPlayer
+  setCurrentPlayer,
+  removePlayerStore
 } = appSlice.actions
 
 export default appSlice.reducer
