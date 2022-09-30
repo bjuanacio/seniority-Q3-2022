@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import { PlayerCard } from './components/organisms/playerCard/playerCard'
 import store, { IPlayer } from './store/store'
 import { observer } from 'mobx-react'
+import { FormPlayer } from './components/organisms/formPlayer/formPlayer'
 
 const App = observer(() => {
   const [openNew, setOpenNew] = useState(false)
@@ -18,14 +19,29 @@ const App = observer(() => {
   const handleEdit = (player: IPlayer) => {}
   const handleDelete = (id: number | undefined) => {}
 
-  const handleFilter = (e: string) => {
-    console.log(e)
-    store.filterPlayers(e)
+  const handleFilter = (filter: string) => {
+    store.filterPlayers(filter)
+  }
+
+  const handleAddPlayer = () => {
+    setOpenNew(true)
+  }
+
+  const onHandleCloseModal = () => {
+    setOpenNew(false)
+  }
+
+  const handleCreateNew = (player: IPlayer) => {
+    store.postPlayer(player)
+    onHandleCloseModal()
   }
   return (
     <div className="app">
+      {openNew && (
+        <FormPlayer handleCloseModal={onHandleCloseModal} handleAddNew={handleCreateNew} nuevo />
+      )}
       <h1 className="app__title">MI EQUIPO</h1>
-      <SearchBar handleFilter={handleFilter} />
+      <SearchBar handleFilter={handleFilter} handleAdd={handleAddPlayer} />
 
       <section className="app__cards">
         {store.filteredPlayers.map((player) => (

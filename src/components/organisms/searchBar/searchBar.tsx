@@ -5,9 +5,10 @@ import './searchBar.scss'
 
 interface SearchProps {
   handleFilter: (value: string) => void
+  handleAdd: () => void
 }
 
-export const SearchBar: React.FC<SearchProps> = ({ handleFilter }) => {
+export const SearchBar: React.FC<SearchProps> = ({ handleFilter, handleAdd }) => {
   return (
     <div className="searchBar-container">
       <Input
@@ -16,7 +17,7 @@ export const SearchBar: React.FC<SearchProps> = ({ handleFilter }) => {
         inputId="buscar"
         onChange={handleFilter}
       />
-      <Button variant="primary" testId="agregar">
+      <Button variant="primary" testId="agregar" onClick={handleAdd}>
         Agregar
       </Button>
     </div>

@@ -76,13 +76,11 @@ class Store {
   }
 
   filterPlayers(filter: string) {
-    console.log({ store: this.Players })
     const filteredP = this.Players.filter(
       (t) =>
         t.firstName.toUpperCase().includes(filter.toUpperCase()) ||
         t.lastName.toUpperCase().includes(filter.toUpperCase())
     )
-    console.log({ store: filteredP })
     runInAction(() => {
       this.filteredPlayers = filteredP
     })
