@@ -13,6 +13,9 @@ const Card: FC<CardProps> = ({ player }) => {
     <div className="card">
       <div className="card__image">
         <img src={player.image} alt={player.firstName} />
+        <div className="card__player">
+          <span>{player.firstName + ' ' + player.lastName}</span>
+        </div>
       </div>
       <div className="card__bottom">
         <div className="card__info">
