@@ -1,23 +1,25 @@
 import './app.scss'
-import Slider from './components/atoms/slider/slider'
-import DeleteIcon from './assets/delete-icon.svg'
-import EditIcon from './assets/edit-icon.svg'
-import CloseIcon from './assets/close-icon.svg'
+import { Routes, Route } from 'react-router-dom'
+import { Home } from './Pages/home/home'
+import { useState } from 'react'
 
-function App() {
-  return (
-    <div className="app">
-      <h1 className="app__title">MI EQUIPO</h1>
-      <div>
-        <Slider label="Puntaje" value={55} />
-      </div>
-      <div>
-        <img src={DeleteIcon} alt="delete-icon" />
-        <img src={EditIcon} alt="edit-icon" />
-        <img src={CloseIcon} alt="close-icon" />
-      </div>
-    </div>
+export default function App() {
+  const navigate = useNavigate()
+  const [playerById, setPlayerById] = useState<Players>({
+    firstName: '',
+    lastName: '',
+    image: '',
+    attack: '',
+    defense: '',
+    skills: '',
+    idAuthor: '',
+    idPosition: ''
+  })
+
+  return(
+    <Route path = '/' element={<Home
+      navigateFunction={navigate}
+      />}
   )
 }
 
-export default App

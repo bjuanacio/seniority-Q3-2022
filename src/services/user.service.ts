@@ -17,4 +17,9 @@ export class UserService {
     const response = await axios.get<User[]>(API_URL)
     return response.data
   }
+
+  static PlayerByCategory = async () => {
+    const response = await axios.get(API_URL + 'category')
+    return response.data
+  }
 }
