@@ -7,13 +7,15 @@ export interface AppState {
   filteredPlayers: Player[]
   showModal: boolean
   positions: Position[]
+  currentPlayer?: Player
 }
 
 const initialState: AppState = {
   players: [],
   filteredPlayers: [],
   showModal: false,
-  positions: []
+  positions: [],
+  currentPlayer: undefined
 }
 
 export const appSlice = createSlice({
@@ -37,11 +39,35 @@ export const appSlice = createSlice({
     },
     setPositions: (state, { payload }: PayloadAction<Position[]>) => {
       state.positions = payload
+    },
+    setCurrentPlayer: (state, { payload }: PayloadAction<Player>) => {
+      state.currentPlayer = payload
+    },
+    addPlayer: (state, { payload }: PayloadAction<Player>) => {
+      state.players = [...state.players, payload]
+      state.filteredPlayers = [...state.players, payload]
+    },
+    editPlayer: (state, { payload }: PayloadAction<Player>) => {
+      state.players = state.players.map((player) => {
+        if (player.id === payload.id) return payload
+        return player
+      })
+      state.filteredPlayers = state.players.map((player) => {
+        if (player.id === payload.id) return payload
+        return player
+      })
     }
   }
 })
 
-export const { setPlayers, setFilterPlayersByName, toggleShowModal, setPositions } =
-  appSlice.actions
+export const {
+  setPlayers,
+  setFilterPlayersByName,
+  toggleShowModal,
+  setPositions,
+  addPlayer,
+  editPlayer,
+  setCurrentPlayer
+} = appSlice.actions
 
 export default appSlice.reducer

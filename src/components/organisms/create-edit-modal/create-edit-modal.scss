@@ -13,6 +13,12 @@
   justify-content: center;
   align-items: center;
 
+  &__input-error{
+    color: red;
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+
   &__header{
     display: flex;
     justify-content: space-between;

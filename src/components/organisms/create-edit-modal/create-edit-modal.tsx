@@ -4,7 +4,7 @@ import './create-edit-modal.scss'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../../store/store'
-import { fetchPlayerPositions } from '../../../services/user.service'
+import { editPlayer, fetchPlayerPositions, createPlayer } from '../../../services/user.service'
 import { setPositions, toggleShowModal } from '../../../store/slices/app-slice'
 import { useForm } from '../../../hooks/use-form'
 import CloseIcon from '../../../assets/close-icon.svg'
@@ -27,7 +27,7 @@ const requiredFields = [
 ]
 
 export const CreateEditModal = () => {
-  const { positions } = useSelector((state: RootState) => state.app)
+  const { positions, currentPlayer } = useSelector((state: RootState) => state.app)
   const dispatch = useDispatch()
   const [invalidForm, setInvalidForm] = useState(true)
 
@@ -44,7 +44,7 @@ export const CreateEditModal = () => {
         Nombre: {
           type: 'input',
           error: 'Nombre no válido',
-          name: 'firstname'
+          name: 'firstName'
         },
         Apellido: {
           type: 'input',
@@ -84,6 +84,13 @@ export const CreateEditModal = () => {
   })
 
   useEffect(() => {
+    if (currentPlayer) {
+      reset({ ...currentPlayer })
+    }
+  }, [currentPlayer])
+
+  useEffect(() => {
+    console.log(validation)
     setInvalidForm(
       Object.keys(validation)
         .filter((key) => requiredFields.includes(key))
@@ -100,15 +107,13 @@ export const CreateEditModal = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(values)
     if (invalidForm) {
       return
+    } else if (currentPlayer) {
+      editPlayer({ ...currentPlayer, ...values })
+    } else {
+      createPlayer({ ...values })
     }
-    // else if (id) {
-    //   dispatch(startEdittingPokemon(id, pokemonValues));
-    // } else {
-    //   dispatch(startCreatingPokemon(pokemonValues));
-    // }
   }
 
   return (
@@ -116,13 +121,17 @@ export const CreateEditModal = () => {
       <div className="modal__container">
         <div className="modal__header">
           <div className="modal__title">Agregar Jugador</div>
-          <img className="modal__close-icon" src={CloseIcon} alt="close-icon" />
+          <div onClick={handleCancel}>
+            <img className="modal__close-icon" src={CloseIcon} alt="close-icon" />
+          </div>
         </div>
         <div className="modal__body">
           <img
             onClick={handleCancel}
             src={
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png'
+              values.image
+                ? values.image
+                : 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png'
             }
             alt="playe image"
             className="modal__img"
@@ -168,6 +177,9 @@ export const CreateEditModal = () => {
                             handleInputChange({ name: group[fieldKey].name, value })
                           }
                         />
+                      )}
+                      {!(validation as any)[group[fieldKey].name] && (
+                        <div className="modal__input-error">{group[fieldKey].error}</div>
                       )}
                     </div>
                   ))

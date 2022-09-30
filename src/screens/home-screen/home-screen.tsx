@@ -38,6 +38,10 @@ export const HomScreen = () => {
     }
   }, [])
 
+  useEffect(() => {
+    setPlayerName('')
+  }, [players])
+
   const handleCreateBtn = () => {
     dispatch(toggleShowModal())
   }
