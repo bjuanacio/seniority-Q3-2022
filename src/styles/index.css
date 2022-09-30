@@ -1,0 +1,262 @@
+.styled-table {
+    border-collapse: collapse;
+    border-spacing: 10px;
+    margin: 20px;
+    width: 95%;
+    
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #f3f3f3;
+    color: black;
+    text-align: center;
+   
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border: 1px solid rgba(90, 71, 71, 0.15);
+    text-align: center;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.intern-table tbody td{
+    border: none;
+    
+}
+
+.intern-table{
+    width: auto;
+    margin: 0px;
+    margin: auto;
+}
+
+.modal {
+    /*display: none;*/ /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 600px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.row {
+    overflow: hidden;
+    padding: 20px;
+}
+
+.containerButton{
+    display: grid;
+    padding-top: 40px;
+    padding-left: 155px;
+    grid-template-columns:  1fr 1fr 1fr;
+}
+
+.col {
+    float: left;
+    width: 50%;
+    margin-top: 10px;
+}
+
+.colBig {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.labelStyle{
+    float: left;
+    width: 32%;
+}
+
+.inputStyle{
+    float: left;
+    width: 60%;
+}
+
+.labelStyleBig{
+    float: left;
+    width: 12.5%;
+    
+}
+
+.inputStyleBig{
+    float: left;
+    width: 35%;
+    margin-left: 19px;
+}
+
+p{
+    text-align: center;
+}
+
+.search {
+    border: solid 1px;
+    border-color: #cccbcb;
+    border-radius: 8px;
+    height: 100%;
+    display: block;
+    padding: 7px 4px 5px 40px;
+    background: white;
+  }
+
+.buttonStyles{
+    width: 120px;
+    height: 40px;
+    background-color: #343434 ;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    float: right;
+    
+}
+.buttonForm{
+    width: 100px;
+    height: 30px;
+    background-color: #343434;
+    border: none;
+    color: white;
+}
+
+.buttonForm:hover{
+    background-color: #a9a9a9 ;
+}
+
+.buttonInactive{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(157, 140, 177);
+    border: none;
+    color: white;
+}
+
+#buttonSave:hover{
+    background-color: rgb(157, 140, 177);
+}
+
+button:hover { background-color: #a9a9a9  }
+.iconStyle{
+    color: rgb(103, 15, 219);
+    float: right;
+    text-align: right;
+}
+
+.iconStyle:hover {
+    color: rgb(155, 103, 223);
+}
+
+.container {
+    display: grid;
+    padding-left: 20px;
+    
+    grid-template-columns:  1fr 1fr;
+}
+
+h3{
+    margin-left: 20px;
+}
+
+.message{
+    text-align: center;
+    font-size: large;
+    color: rgb(103, 15, 219);
+}
+
+.errors{
+    text-align: center;
+    font-size: large;
+    color: rgb(214, 20, 20);
+}
+
+img:hover{
+    width: 37px;
+    height: 37px;
+    overflow: hidden;
+}
+
+.idConditionalTd{
+    border: none;
+    border-color: white;
+}
+
+.idConditionalTd > p {
+    color: #888;
+}
+
+.orderRevert {
+    float: right;
+}
+
+.orderRevert:hover{
+    color: #888;
+}
+
+/*pagination*/
+
+.containerPagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.buttonPage {
+    background-color: rgb(220, 215, 228); 
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.iconPag{
+    width: 13px;
+}
+
+button[disabled]{
+    background-color: #dfdada;
+    pointer-events: none;
+}
