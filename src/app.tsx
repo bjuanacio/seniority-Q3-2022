@@ -6,7 +6,6 @@ import { UserService } from './services/user.service'
 import Home from './components/pages/home'
 
 function App() {
-  UserService.getPlayer().then((resp) => console.log(resp))
   /* return (
     <div className="app">
       <h1 className="app__title">MI EQUIPO</h1>
