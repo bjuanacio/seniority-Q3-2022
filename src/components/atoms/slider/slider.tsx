@@ -1,23 +1,23 @@
-import { FC } from 'react'
-import './slider.scss'
-import useSlider from './use-slider/use-slider'
+import { FC } from "react";
+import "./slider.scss";
+import useSlider from "./use-slider/use-slider";
 
 export interface SliderProps {
-  label?: string
-  value?: number
-  defaultValue?: number
-  onChange?: (value: number) => void
+  label?: string;
+  value?: number;
+  defaultValue?: number;
+  onChange?: (value: number) => void;
 }
 
-const MAX_RANGE = 100
-const MIN_RANGE = 0
+const MAX_RANGE = 100;
+const MIN_RANGE = 0;
 
 const Slider: FC<SliderProps> = ({ label, value, defaultValue, onChange }) => {
   const { currentValue, handleCurrentValue } = useSlider({
     defaultValue,
     onChange,
-    value
-  })
+    value,
+  });
 
   return (
     <div className="slider">
@@ -42,7 +42,7 @@ const Slider: FC<SliderProps> = ({ label, value, defaultValue, onChange }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Slider
+export default Slider;
