@@ -1,0 +1,51 @@
+.card{
+    position: relative;
+    width: 16vw;
+    height: 50vh;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(77, 77, 77);
+
+    &__name{
+        position: absolute;
+        top: 50%;
+        left: 15%;
+        color: rgb(53, 53, 53);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: larger;
+        font-weight: bolder;
+        font-size: 1.5rem;
+    }
+
+    &__image{
+        width: 100%;
+        height: 60%;
+    }
+
+    &__stats{
+        margin-top: 4vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1rem;
+    }
+
+    &__stats-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    &__actions{
+        margin-top: 2vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &__icon{
+        width: 2rem;
+        height: 2rem;
+    }
+
+}

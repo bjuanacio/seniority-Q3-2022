@@ -1,0 +1,9 @@
+.players-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  row-gap: 2vw;
+  column-gap: 6vh;
+  background-color: darkgrey;
+  padding: 50px;
+}
