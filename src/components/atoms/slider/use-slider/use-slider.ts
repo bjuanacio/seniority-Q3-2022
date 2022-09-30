@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 export interface UseSliderArgs {
   value?: number
   defaultValue?: number
-  onChange?: (value: number) => void
+  onChange?: (value: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const DEFAULT_VALUE = 55
@@ -15,12 +15,11 @@ function useSlider(args?: UseSliderArgs) {
     setCurrentValue(args?.value || args?.defaultValue || DEFAULT_VALUE)
   }, [args?.value])
 
-  const handleCurrentValue = (valueTarget: string) => {
-    const valueSlider = Number(valueTarget)
+  const handleCurrentValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (args?.onChange) args?.onChange(e)
 
-    if (args?.onChange) args?.onChange(valueSlider)
-
-    setCurrentValue(valueSlider)
+    setCurrentValue(Number(e.target.value))
+    return e.target.value
   }
 
   return {
