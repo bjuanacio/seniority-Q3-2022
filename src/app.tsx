@@ -1,21 +1,40 @@
 import './app.scss'
-import Slider from './components/atoms/slider/slider'
-import DeleteIcon from './assets/delete-icon.svg'
-import EditIcon from './assets/edit-icon.svg'
-import CloseIcon from './assets/close-icon.svg'
+import Input from './components/atoms/input/input'
+import Button from './components/atoms/button/button'
+import useApp from './hooks/use-app/use-app'
+import Modal from './components/organisms/modal/modal'
+import PlayerList from './components/organisms/player-list/player-list'
 
 function App() {
+  const {
+    showModal,
+    toggleModal,
+    players,
+    handleSearch,
+    search,
+    handleClickAdd,
+    actualPlayer,
+    handleAddOrEdit,
+    getPlayers,
+    handleOnEditClick
+  } = useApp()
+
   return (
     <div className="app">
       <h1 className="app__title">MI EQUIPO</h1>
-      <div>
-        <Slider label="Puntaje" value={55} />
+      <div className="app__actions">
+        <Input onChange={handleSearch} placeholder="Buscar por nombre" value={search} />
+        <Button onClick={handleClickAdd} />
       </div>
-      <div>
-        <img src={DeleteIcon} alt="delete-icon" />
-        <img src={EditIcon} alt="edit-icon" />
-        <img src={CloseIcon} alt="close-icon" />
-      </div>
+      <PlayerList
+        players={players}
+        filter={search}
+        onEdit={handleOnEditClick}
+        onDelete={getPlayers}
+      />
+      {showModal && (
+        <Modal onClose={toggleModal} onEditOrAdd={handleAddOrEdit} actualPlayer={actualPlayer} />
+      )}
     </div>
   )
 }

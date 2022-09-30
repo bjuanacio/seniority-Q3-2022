@@ -1,0 +1,9 @@
+.player-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  &__player {
+    width: 31.333%;
+  }
+}

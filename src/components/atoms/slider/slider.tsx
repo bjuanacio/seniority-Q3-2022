@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { Player } from '../../../services/player.service'
 import './slider.scss'
 import useSlider from './use-slider/use-slider'
 
@@ -6,17 +7,19 @@ export interface SliderProps {
   label?: string
   value?: number
   defaultValue?: number
-  onChange?: (value: number) => void
+  onChange?: (value: number, name: keyof Player) => void
+  name?: keyof Player
 }
 
 const MAX_RANGE = 100
 const MIN_RANGE = 0
 
-const Slider: FC<SliderProps> = ({ label, value, defaultValue, onChange }) => {
+const Slider: FC<SliderProps> = ({ label, value, defaultValue, onChange, name }) => {
   const { currentValue, handleCurrentValue } = useSlider({
     defaultValue,
     onChange,
-    value
+    value,
+    name
   })
 
   return (
