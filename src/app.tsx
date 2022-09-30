@@ -1,16 +1,14 @@
 import './app.scss'
-import Slider from './components/atoms/slider/slider'
 import DeleteIcon from './assets/delete-icon.svg'
 import EditIcon from './assets/edit-icon.svg'
 import CloseIcon from './assets/close-icon.svg'
+import { APP_CONSTANTS } from './constants/app-constants'
 
 function App() {
   return (
     <div className="app">
-      <h1 className="app__title">MI EQUIPO</h1>
-      <div>
-        <Slider label="Puntaje" value={55} />
-      </div>
+      <h1 className="app__title">{APP_CONSTANTS.APP_TITLE}</h1>
+      <div></div>
       <div>
         <img src={DeleteIcon} alt="delete-icon" />
         <img src={EditIcon} alt="edit-icon" />
