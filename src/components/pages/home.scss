@@ -1,0 +1,75 @@
+.container{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .add_button{
+    align-self: baseline;
+    display: flex;
+    align-content: flex-end;
+    width: 300px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: #000;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    appearance: button;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn svg {
+    margin-right: 8px;
+  }
+  
+  .btn-reverse {
+    background: grey;
+  }
+  
+  .btn-block {
+    background-color: gray;
+    margin-top: 16px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    appearance: button;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-sm {
+    padding: 5px 15px;
+    font-size: 13px;
+  }
+  
+  .btn-danger {
+    background: darkred;
+    border: none;
+  }
+  
+  .btn-back {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  
+  .btn:hover {
+    transform: scale(0.98);
+  }
+  

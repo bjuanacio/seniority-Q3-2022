@@ -14,3 +14,7 @@ export default function fromReactToWebComponentProps(cProps: DesignSystemElement
     return acc
   }, {})
 }
+
+export function extractErrorMessage(error: any) {
+  return error.response?.data?.message || error.message || error.toString()
+}
