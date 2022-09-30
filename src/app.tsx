@@ -1,20 +1,28 @@
 import './app.scss'
-import Slider from './components/atoms/slider/slider'
-import DeleteIcon from './assets/delete-icon.svg'
-import EditIcon from './assets/edit-icon.svg'
-import CloseIcon from './assets/close-icon.svg'
+import { Input } from './components/atoms/input/input'
+import { Button } from './components/atoms/button/button'
+import { Modal } from './components/atoms/modal/modal'
+import { useApp } from './hooks/use-app'
+import { PlayerList } from './components/organisms/player-list/player-list'
+import { Form } from './components/organisms/form/form'
+import { Search } from './components/molecules/search/search'
 
 function App() {
+  const { action, values } = useApp()
   return (
     <div className="app">
       <h1 className="app__title">MI EQUIPO</h1>
       <div>
-        <Slider label="Puntaje" value={55} />
-      </div>
-      <div>
-        <img src={DeleteIcon} alt="delete-icon" />
-        <img src={EditIcon} alt="edit-icon" />
-        <img src={CloseIcon} alt="close-icon" />
+        <Search onChangeSearch={action.onChangeSearch} searchValue={values.searchValue} />
+        <Button color="primary" size="medium" onClick={action.openModal}>
+          Registrar
+        </Button>
+        <PlayerList players={values.playerList} />
+        {!!values.isOpen && (
+          <Modal container={document.getElementById('modal') as HTMLElement}>
+            <Form closeModal={action.closeModal} onChangeUserName={action.onChangeUserName} />
+          </Modal>
+        )}
       </div>
     </div>
   )
