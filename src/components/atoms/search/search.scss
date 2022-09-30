@@ -1,0 +1,12 @@
+.input {
+  height: 24px;
+  border-radius: 6px;
+  padding: 8px;
+  font-weight: 600;
+  &__error {
+    border: 1px solid red;
+  }
+  &__normal {
+    border: 1px solid black;
+  }
+}
